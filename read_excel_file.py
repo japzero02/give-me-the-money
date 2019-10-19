@@ -1,6 +1,8 @@
 import pandas as pd
 
 
-def read_file():
+def save_file():
     data_frame = pd.read_excel("excel/student_booking.xlsx")
-    return data_frame
+    writer = pd.ExcelWriter('student_booking.xlsx')
+    data_frame.to_excel(writer, index=False, sheet_name='Sheet1')
+    writer.save()
