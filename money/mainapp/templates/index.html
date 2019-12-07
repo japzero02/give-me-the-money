@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<br>
+
+<div class="button-group">
+
+    <a href="{% url 'display_student' %}" class="btn btn-primary btn-md" role="button"> Student</a>
+    <a href="#" class="btn btn-warning btn-sm" role="button"> +</a>
+
+{#    <a href="{% url 'display_january' %}" class="btn btn-primary btn-md" role="button"> January</a>#}
+{#    <a href="#" class="btn btn-warning btn-sm" role="button"> +</a>#}
+
+
+
+</div>
+
+
+<br>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Student_ID</th>
+            <th>Full_Name</th>
+            <th>January</th>
+            <th>February</th>
+            <th>March</th>
+            <th>April</th>
+            <th>May</th>
+            <th>June</th>
+            <th>July</th>
+            <th>August</th>
+            <th>September</th>
+            <th>October</th>
+            <th>November</th>
+            <th>December</th>
+            <th>Issues</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    {% for item in items %}
+    <tr>
+        <td>{{ item.student_id }}</td>
+        <td>{{ item.first_name }} {{ item.last_name }}</td>
+        <td>{{ item.january }}</td>
+        <td>{{ item.february }}</td>
+        <td>{{ item.march }}</td>
+        <td>{{ item.april }}</td>
+        <td>{{ item.may }}</td>
+        <td>{{ item.june }}</td>
+        <td>{{ item.july }}</td>
+        <td>{{ item.august }}</td>
+        <td>{{ item.september }}</td>
+        <td>{{ item.october }}</td>
+        <td>{{ item.november }}</td>
+        <td>{{ item.december }}</td>
+        <td>{{ item.issues }}</td>
+    </tr>
+
+    {% endfor %}
+
+    </tbody>
+</table>
+
+{% endblock %}
