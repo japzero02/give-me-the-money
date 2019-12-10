@@ -59,6 +59,11 @@
         <td>{{ item.november }}</td>
         <td>{{ item.december }}</td>
         <td>{{ item.issues }}</td>
+        {% if header == "Student" %}
+        <td>
+            <a href="{% url 'edit_student' item.pk %}" class="btn btn-warning btn-sm" role="button">Edit</a>
+        </td>
+        {% endif %}
     </tr>
 
     {% endfor %}
