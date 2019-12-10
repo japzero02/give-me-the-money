@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    {% if messages %}
+        {% for message in messages %}
+            <div>
+<!--                | means OR operator-->
+                <strong>{{message|safe}}</strong>
+            </div>
+        {% endfor %}
+    {% else %}
+    {{order}}
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h3>Choose File for add name in database</h3>
+        <label for="file1"></label>
+        <input type="file" id="file1" name="file">
+        <button type="submit">Upload</button>
+        <h6>**In file should have column like this: student_id,first_name,last_name</h6>
+    </form>
+    {% endif %}
+    {% for profile in profiles %}
+    {{profile.name}}
+    {% endfor %}
+{% endblock %}

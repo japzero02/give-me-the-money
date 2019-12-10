@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from .forms import *
+import csv, io
+from django.contrib import messages
+
 
 # Create your views here.
 def index(request):
@@ -9,7 +12,7 @@ def index(request):
 
 def display_student(request):
     """Show student database in html"""
-    items = Student.objects.all()
+    items = Student.objects.all().order_by('student_id')
     context = {
         'items': items,
         'header': 'Student',
@@ -31,7 +34,7 @@ def add_student(request):
 
 
 def edit_student(request, pk):
-    """edit student by primarykey"""
+    """edit student by primary key"""
     item = get_object_or_404(Student, pk=pk)
     if request.method == "POST":
         form = StudentForm(request.POST, instance=item)
@@ -41,3 +44,24 @@ def edit_student(request, pk):
     else:
         form = StudentForm(instance=item)
         return render(request, 'edit_item.html', {'form': form})
+
+
+def upload_csv(request):
+    """this function can add student by csv file"""
+    template = "upload_csv.html"
+    data = Student.objects.all()
+    if request.method == "GET":
+        return render(request, template)
+    csv_file = request.FILES['file']
+    if not csv_file.name.endswith('.csv'):
+        messages.error(request, 'This not csv file please try again!')
+    data_set = csv_file.read().decode('UTF-8')
+    io_string = io.StringIO(data_set)
+    for column in csv.reader(io_string, delimiter=',', quotechar="|"):
+        _, created = Student.objects.update_or_create(
+            student_id=column[0],
+            first_name=column[1],
+            last_name=column[2]
+        )
+    context = {}
+    return render(request, 'index.html', context)

@@ -5,4 +5,5 @@ urlpatterns = [
     url(r'^display_student$', display_student, name='display_student'),
     url(r'^add_student$', add_student, name="add_student"),
     url(r'^edit_student/(?P<pk>\d+)$', edit_student, name='edit_student'),
+    url(r'^upload_csv$', upload_csv, name='upload_csv'),
 ]
