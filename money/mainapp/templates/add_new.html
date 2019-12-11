@@ -2,8 +2,7 @@
 
 {% block body %}
     <div class="container">
-        <form method="POST">
-            <br>
+        <form class="pt-3" method="POST">
             {% csrf_token %}
             {% for field in form %}
             <div class="form-group row">
@@ -16,4 +15,11 @@
             <button type="submit" class="btn-primary" name="button">Add Student</button>
         </form>
     </div>
+<style>
+.container{
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 5px 5px #c5c5c5;
+}
+</style>
 {% endblock %}
