@@ -3,10 +3,21 @@
 {% block body %}
 <!-- button group -->
 <div class="button-group mb-3">
-
-        <a href="{% url 'display_student' %}" class="btn btn-primary btn-md position-button" role="button"> Student</a>
-        <a href="{% url 'add_student' %}" class="btn btn-warning btn-sm" role="button"> +</a>
-        <a href="{% url 'upload_csv' %}" class="btn btn-primary btn-md" role="button">Choose csv</a>
+    <div class="row">
+        <div class="col">
+            <div class="add mb-2">
+                <a href="{% url 'add_student' %}" class="btn btn-warning btn-md position-button" role="button" id="add">+ Add Student</a>
+    
+            </div>
+            <div class="student mb-2">
+                <a href="{% url 'display_student' %}" class="btn btn-primary btn-md position-button" role="button" id="std"> Student</a>       
+            </div>
+            <div class="choose">
+                <a href="{% url 'upload_csv' %}" class="btn btn-primary btn-md position-button" role="button" id="choose">Choose csv</a>
+            </div>
+        </div>
+    </div>
+        
 
     {#    <a href="{% url 'display_january' %}" class="btn btn-primary btn-md" role="button"> January</a>#}
     {#    <a href="#" class="btn btn-warning btn-sm" role="button"> +</a>#}
@@ -64,8 +75,8 @@
                 <td>{{ item.issues }}</td>
                 {% if header == "Student" %}
                 <td>
-                    <a href="{% url 'edit_student' item.pk %}" class="btn btn-warning btn-sm my-1 center" role="button">Edit</a>
-                    <a href="{% url 'delete_student' item.pk %}" class="btn btn-danger btn-sm" role="button">Delete</a>
+                    <a href="{% url 'edit_student' item.pk %}" class="btn btn-warning btn-sm my-1 center" role="button" id="edit">Edit</a>
+                    <a href="{% url 'delete_student' item.pk %}" class="btn btn-danger btn-sm" role="button" id="del">Delete</a>
                 </td>
                 {% endif %}
             </tr>
@@ -80,6 +91,12 @@
     </div>
 </div>
 <style>
+#std ,#add ,#choose {
+    width: 150px;
+}    
+#edit ,#del {
+    width: 60px;
+}
 .color {
     color: #112211;
 }
