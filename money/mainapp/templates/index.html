@@ -2,77 +2,78 @@
 
 {% block body %}
 
-<br>
 
-<div class="button-group">
+<div class="container">
+    <!-- button group -->
+    <div class="button-group mb-3">
 
-    <a href="{% url 'display_student' %}" class="btn btn-primary btn-md position-button" role="button"> Student</a>
-    <a href="{% url 'add_student' %}" class="btn btn-warning btn-sm" role="button"> +</a>
-    <a href="{% url 'upload_csv' %}" class="btn btn-primary btn-md" role="button">Choose csv</a>
+        <a href="{% url 'display_student' %}" class="btn btn-primary btn-md position-button" role="button"> Student</a>
+        <a href="{% url 'add_student' %}" class="btn btn-warning btn-sm" role="button"> +</a>
+        <a href="{% url 'upload_csv' %}" class="btn btn-primary btn-md" role="button">Choose csv</a>
 
-{#    <a href="{% url 'display_january' %}" class="btn btn-primary btn-md" role="button"> January</a>#}
-{#    <a href="#" class="btn btn-warning btn-sm" role="button"> +</a>#}
+    {#    <a href="{% url 'display_january' %}" class="btn btn-primary btn-md" role="button"> January</a>#}
+    {#    <a href="#" class="btn btn-warning btn-sm" role="button"> +</a>#}
+    </div>
+    <!-- END button group -->
 
+    <h4 style="padding-left: 5%;">Viewing : {{ header }}</h4>
 
+    <!-- table -->
+    <div class="table-backgroundcolor">
+        <table class="table table-bordered color size">
+            <thead>
+                <tr class="bg-primary center">
+                    <th>Student_ID</th>
+                    <th>Full_Name</th>
+                    <th>January</th>
+                    <th>February</th>
+                    <th>March</th>
+                    <th>April</th>
+                    <th>May</th>
+                    <th>June</th>
+                    <th>July</th>
+                    <th>August</th>
+                    <th>September</th>
+                    <th>October</th>
+                    <th>November</th>
+                    <th>December</th>
+                    <th>Status</th>
+                    <th>Manage</th>
+                </tr>
+            </thead>
+            <tbody>
 
-</div>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.student_id }}</td>
+                <td>{{ item.first_name }} {{ item.last_name }}</td>
+                <td>{{ item.january }}</td>
+                <td>{{ item.february }}</td>
+                <td>{{ item.march }}</td>
+                <td>{{ item.april }}</td>
+                <td>{{ item.may }}</td>
+                <td>{{ item.june }}</td>
+                <td>{{ item.july }}</td>
+                <td>{{ item.august }}</td>
+                <td>{{ item.september }}</td>
+                <td>{{ item.october }}</td>
+                <td>{{ item.november }}</td>
+                <td>{{ item.december }}</td>
+                <td>{{ item.issues }}</td>
+                {% if header == "Student" %}
+                <td>
+                    <a href="{% url 'edit_student' item.pk %}" class="btn btn-warning btn-sm" role="button">Edit</a>
+                    <a href="{% url 'delete_student' item.pk %}" class="btn btn-danger btn-sm" role="button">Delete</a>
+                </td>
+                {% endif %}
+            </tr>
 
+            {% endfor %}
 
-<br>
-
-<h4>Viewing : {{ header }}</h4>
-<div class="table-backgroundcolor">
-<table class="table table-bordered color size">
-    <thead>
-        <tr class="bg-primary center">
-            <th>Student_ID</th>
-            <th>Full_Name</th>
-            <th>January</th>
-            <th>February</th>
-            <th>March</th>
-            <th>April</th>
-            <th>May</th>
-            <th>June</th>
-            <th>July</th>
-            <th>August</th>
-            <th>September</th>
-            <th>October</th>
-            <th>November</th>
-            <th>December</th>
-            <th>Issues</th>
-        </tr>
-    </thead>
-    <tbody>
-
-    {% for item in items %}
-    <tr>
-        <td>{{ item.student_id }}</td>
-        <td>{{ item.first_name }} {{ item.last_name }}</td>
-        <td>{{ item.january }}</td>
-        <td>{{ item.february }}</td>
-        <td>{{ item.march }}</td>
-        <td>{{ item.april }}</td>
-        <td>{{ item.may }}</td>
-        <td>{{ item.june }}</td>
-        <td>{{ item.july }}</td>
-        <td>{{ item.august }}</td>
-        <td>{{ item.september }}</td>
-        <td>{{ item.october }}</td>
-        <td>{{ item.november }}</td>
-        <td>{{ item.december }}</td>
-        <td>{{ item.issues }}</td>
-        {% if header == "Student" %}
-        <td>
-            <a href="{% url 'edit_student' item.pk %}" class="btn btn-warning btn-sm" role="button">Edit</a>
-            <a href="{% url 'delete_student' item.pk %}" class="btn btn-danger btn-sm" role="button">Delete</a>
-        </td>
-        {% endif %}
-    </tr>
-
-    {% endfor %}
-
-    </tbody>
-</table>
+            </tbody>
+        </table>
+        <!-- END table -->
+    </div>
 </div>
 <style>
 .color {
@@ -80,14 +81,15 @@
 }
 .table-backgroundcolor {
     background-color: #ffffff;
-    width: 80%;
+    width: 69.6%;
     height: calc(100vh - 203px);
     display: block;
     margin-left: auto;
     margin-right: auto;
+
 }
 .size {
-    width: 100%;
+    width: 70%;
 }
 </style>
 {% endblock %}
