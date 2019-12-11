@@ -1,11 +1,8 @@
 {% extends 'base.html' %}
 
 {% block body %}
-
-
-<div class="container">
-    <!-- button group -->
-    <div class="button-group mb-3">
+<!-- button group -->
+<div class="button-group mb-3">
 
         <a href="{% url 'display_student' %}" class="btn btn-primary btn-md position-button" role="button"> Student</a>
         <a href="{% url 'add_student' %}" class="btn btn-warning btn-sm" role="button"> +</a>
@@ -14,9 +11,12 @@
     {#    <a href="{% url 'display_january' %}" class="btn btn-primary btn-md" role="button"> January</a>#}
     {#    <a href="#" class="btn btn-warning btn-sm" role="button"> +</a>#}
     </div>
+<div class="container">
+    
+    
     <!-- END button group -->
 
-    <h4 style="padding-left: 5%;">Viewing : {{ header }}</h4>
+    <h4 >Viewing : {{ header }}</h4>
 
     <!-- table -->
     <div class="table-backgroundcolor">
@@ -81,7 +81,7 @@
 }
 .table-backgroundcolor {
     background-color: #ffffff;
-    width: 69.6%;
+    width: 120.4%;
     height: calc(100vh - 203px);
     display: block;
     margin-left: auto;
