@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<!-- button group -->
+
 <div class="button-group pr-3">
     <div class="row">
+        <!-- button group -->
         <div class="col-2">
             <div class="add mb-2">
                 <a href="{% url 'add_student' %}" class="btn btn-warning btn-md position-button" role="button"
@@ -15,7 +16,7 @@
                     id="std">Student</a>
             </div>
             <div class="choose">
-                <a href="{% url 'upload_csv' %}" class="btn btn-primary btn-md position-button" role="button"
+                <a href="{% url 'upload_csv' %}" class="btn btn-success btn-md position-button" role="button"
                     id="choose">Choose csv</a>
             </div>
         </div>
