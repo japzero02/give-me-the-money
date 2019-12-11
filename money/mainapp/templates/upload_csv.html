@@ -10,14 +10,44 @@
         {% endfor %}
     {% else %}
     {{order}}
-    <form action="" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <h3>Choose File for add name in database</h3>
-        <label for="file1"></label>
-        <input type="file" id="file1" name="file">
-        <button type="submit">Upload</button>
-        <h6>**In file should have column like this: student_id,first_name,last_name</h6>
-    </form>
+    <div class="container mt-auto">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1>Choose File for add name in database</h1>
+            <div class="form-group size center mt-5">
+                <div class="custom-file">
+                    <input type="file" name="files[]" multiple class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+            </div>
+            <div class="form-group size center mb-2">
+                <button type="button" name="upload" value="upload" id="upload" class="btn btn-block btn-primary"><i class="fa fa-fw fa-upload"></i> Upload</button>
+            </div>
+            <h6>**In file should have column like this: student_id,first_name,last_name</h6>
+        </form>
+    </div>
+<style>
+.container {
+    background-color: #dddddd;
+    text-align: center;
+    width: 900px;
+    height: 450px;
+    padding-top: 100px;
+    padding-right: auto;
+    border-radius: 15px;
+    box-shadow: 5px 5px #c5c5c5;
+
+}
+.size {
+    width: 60%;
+}
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+</style>
     {% endif %}
     {% for profile in profiles %}
     {{profile.name}}

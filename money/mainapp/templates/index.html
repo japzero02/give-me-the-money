@@ -64,7 +64,7 @@
                 <td>{{ item.issues }}</td>
                 {% if header == "Student" %}
                 <td>
-                    <a href="{% url 'edit_student' item.pk %}" class="btn btn-warning btn-sm my-1 ml-2" role="button">Edit</a>
+                    <a href="{% url 'edit_student' item.pk %}" class="btn btn-warning btn-sm my-1 center" role="button">Edit</a>
                     <a href="{% url 'delete_student' item.pk %}" class="btn btn-danger btn-sm" role="button">Delete</a>
                 </td>
                 {% endif %}
