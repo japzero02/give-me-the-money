@@ -20,6 +20,8 @@
 
     <!-- table -->
     <div class="table-backgroundcolor">
+        <div class="row">
+            <div class="col-xl">
         <table class="table table-bordered color size">
             <thead>
                 <tr class="bg-primary center">
@@ -62,7 +64,7 @@
                 <td>{{ item.issues }}</td>
                 {% if header == "Student" %}
                 <td>
-                    <a href="{% url 'edit_student' item.pk %}" class="btn btn-warning btn-sm" role="button">Edit</a>
+                    <a href="{% url 'edit_student' item.pk %}" class="btn btn-warning btn-sm my-1 ml-2" role="button">Edit</a>
                     <a href="{% url 'delete_student' item.pk %}" class="btn btn-danger btn-sm" role="button">Delete</a>
                 </td>
                 {% endif %}
@@ -74,10 +76,12 @@
         </table>
         <!-- END table -->
     </div>
+    </div>
+    </div>
 </div>
 <style>
 .color {
-    color: #ffffff;
+    color: #112211;
 }
 .table-backgroundcolor {
     background-color: #ffffff;
@@ -90,6 +94,9 @@
 }
 .size {
     width: 70%;
+}
+.center {
+    text-align: center;
 }
 </style>
 {% endblock %}
