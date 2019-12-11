@@ -5,14 +5,16 @@
         <form class="pt-3" method="POST">
             {% csrf_token %}
             {% for field in form %}
-            <div class="form-group row">
+            <div class="form-group row center">
                 <label for="id_{{ field.name }}" class="col-2 col-form-label"> {{ field.label }}</label>
                 <div class="col-10">
                     {{ field }}
                 </div>
             </div>
             {% endfor %}
-            <button type="submit" class="btn-primary" name="button">Add Student</button>
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary" name="button">Add Student</button>
+            </div>
         </form>
     </div>
 <style>
@@ -20,6 +22,11 @@
     background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 5px 5px #c5c5c5;
+    height: 700px;
+}
+.center {
+    margin: auto;
+    padding-left: 250px;
 }
 </style>
 {% endblock %}
