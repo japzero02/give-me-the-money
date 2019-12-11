@@ -58,9 +58,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="282" y="19" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1575997290783" />
-    <state x="488" y="228" key="com.intellij.ide.util.TipDialog" timestamp="1575987068432">
+    <state x="0" y="333" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1576009200373">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="228" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1575987068432" />
+    <state x="0" y="333" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1576009200373" />
+    <state x="488" y="228" key="com.intellij.ide.util.TipDialog" timestamp="1576060616145">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="228" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1576060616145" />
   </component>
 </project>
