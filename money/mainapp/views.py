@@ -21,7 +21,7 @@ def display_student(request):
 
 
 def add_student(request):
-    """add student"""
+    """this function can add student in add_new.html"""
     if request.method == "POST":
         form = StudentForm(request.POST)
 
@@ -34,7 +34,7 @@ def add_student(request):
 
 
 def edit_student(request, pk):
-    """edit student by primary key"""
+    """this function can edit student form in edit_item.html"""
     item = get_object_or_404(Student, pk=pk)
     if request.method == "POST":
         form = StudentForm(request.POST, instance=item)
@@ -44,6 +44,16 @@ def edit_student(request, pk):
     else:
         form = StudentForm(instance=item)
         return render(request, 'edit_item.html', {'form': form})
+
+
+def delete_student(request, pk):
+    """this function can delete student information"""
+    Student.objects.filter(id=pk).delete()
+    items = Student.objects.all()
+    context = {
+        'items': items
+    }
+    return render(request, 'index.html', context)
 
 
 def upload_csv(request):
