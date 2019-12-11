@@ -53,7 +53,7 @@ def delete_student(request, pk):
     context = {
         'items': items
     }
-    return render(request, 'index.html', context)
+    return redirect('/display_student')
 
 
 def upload_csv(request):
