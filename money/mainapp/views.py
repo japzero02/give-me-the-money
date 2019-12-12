@@ -27,7 +27,7 @@ def add_student(request):
 
         if form.is_valid():
             form.save()
-            return redirect('index')
+            return redirect('/display_student')
     else:
         form = StudentForm()
         return render(request, 'add_new.html', {'form': form})
@@ -40,7 +40,7 @@ def edit_student(request, pk):
         form = StudentForm(request.POST, instance=item)
         if form.is_valid():
             form.save()
-            return redirect('index')
+            return redirect('/display_student')
     else:
         form = StudentForm(instance=item)
         return render(request, 'edit_item.html', {'form': form})
@@ -74,4 +74,4 @@ def upload_csv(request):
             last_name=column[2]
         )
     context = {}
-    return render(request, 'index.html', context)
+    return redirect('/display_student')
