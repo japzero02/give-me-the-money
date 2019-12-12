@@ -1,55 +1,48 @@
 {% extends 'base.html' %}
 
 {% block body %}
-    {% if messages %}
-        {% for message in messages %}
-            <div>
-<!--                | means OR operator-->
-                <strong>{{message|safe}}</strong>
+{% if messages %}
+{% for message in messages %}
+<div>
+    <!--                | means OR operator-->
+    <strong>{{message|safe}}</strong>
+</div>
+{% endfor %}
+{% else %}
+{{order}}
+<div class="container-fluid">
+    <div class="col-md-12 col-lg-8 offset-lg-2">
+        <div class="card">
+            <div class="card-body">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h1 class="text-center">Choose File for add name in database</h1>
+                   <div class="col-md-12 col-lg-8 offset-lg-2">
+                        <div class="form-group size center mt-5">
+                            <div class="custom-file">
+                                <input type="file" name="file" multiple class="custom-file-input" id="file1">
+                                <label class="custom-file-label" for="file1">Choose file</label>
+                            </div>
+                        </div>
+                        <div class="form-group size center mb-2">
+                            <button type="submit" name="upload" value="upload" id="upload" class="btn btn-block btn-primary"><i
+                                    class="fa fa-fw fa-upload"></i> Upload</button>
+                        </div>
+                   </div>
+                    <p class="lead text-center">**In file should have column like this: student_id,first_name,last_name</p>
+                </form>
             </div>
-        {% endfor %}
-    {% else %}
-    {{order}}
-    <div class="container mt-auto">
-        <form action="" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <h1>Choose File for add name in database</h1>
-            <div class="form-group size center mt-5">
-                <div class="custom-file">
-                    <input type="file" name="file" multiple class="custom-file-input" id="file1">
-                    <label class="custom-file-label" for="file1">Choose file</label>
-                </div>
-            </div>
-            <div class="form-group size center mb-2">
-                <button type="submit" name="upload" value="upload" id="upload" class="btn btn-block btn-primary"><i class="fa fa-fw fa-upload"></i> Upload</button>
-            </div>
-            <h6>**In file should have column like this: student_id,first_name,last_name</h6>
-        </form>
+        </div>
     </div>
+</div>
+{% endif %}
+{% for profile in profiles %}
+{{profile.name}}
+{% endfor %}
 <style>
-.container {
-    background-color: #ffffff;
-    text-align: center;
-    width: 900px;
-    height: 450px;
-    padding-top: 100px;
-    padding-right: auto;
-    border-radius: 15px;
-    box-shadow: 5px 5px #c5c5c5;
-
-}
-.size {
-    width: 60%;
-}
-.center {
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-}
-
+    .card {
+        margin: 1.5rem;
+        padding: 3.55rem;
+    }
 </style>
-    {% endif %}
-    {% for profile in profiles %}
-    {{profile.name}}
-    {% endfor %}
 {% endblock %}

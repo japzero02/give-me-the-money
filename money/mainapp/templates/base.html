@@ -3,43 +3,44 @@
 
 <head>
     <title>Money Management</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
 </head>
-{% load static %}
-<link rel="stylesheet" href="{% static '/css/style.css' %}">
-<link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
 
 <body>
-
-<nav class="navbar navbar-expand navbar-dark bg-dark mb-2">
-    <i class="fa fa-user-circle fa-2x" style="color:#DDDDDD; margin-right: 15px; margin-left: 15px;" aria-hidden="true"></i>
-    <b><a class="navbar-brand" href="{% url 'index' %}">MANAGEMENT SYSTEM</a></b>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02"
+    <nav class="navbar navbar-expand navbar-dark bg-dark mb-2">
+        <i class="fa fa-user-circle fa-2x" style="color:#DDDDDD; margin-right: 15px; margin-left: 15px;"
+            aria-hidden="true"></i>
+        <b><a class="navbar-brand" href="{% url 'index' %}">MANAGEMENT SYSTEM</a></b>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02"
             aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarsExample02">
-        <ul class="navbar-nav mr-auto">
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarsExample02">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+    <div class="">
+
+        {% block body %}
+
+
+        {% endblock %}
+
     </div>
-</nav>
-
-<br>
-<div class="">
-
-    {% block body %}
-
-
-    {% endblock %}
-
-</div>
 
 </body>
+
 </html>
 <style>
-body {
-    background-color: #F1EEEE;
-   
-}
+    body {
+        background-color: #F1EEEE;
+
+    }
 </style>
