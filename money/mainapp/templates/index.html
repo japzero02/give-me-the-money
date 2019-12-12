@@ -5,7 +5,7 @@
 <div class="button-group pr-3">
     <div class="row">
         <!-- button group -->
-        <div class="col-2">
+        <div class="col-lg-2 col-xl-2">
             <div class="add mb-2">
                 <a href="{% url 'add_student' %}" class="btn btn-warning btn-md position-button" role="button"
                     id="add">Add Student</a>
@@ -22,7 +22,7 @@
         </div>
         <!-- END button group -->
 
-        <div class="col-">
+        <div class="col-lg col-xl-6">
             <h4 class="mt-0">Viewing : {{ header }}</h4>
 
             <!-- table -->
@@ -95,7 +95,7 @@
     #std,
     #add,
     #choose {
-        width: 150px;
+        width: 120px;
     }
 
     #edit,
@@ -113,12 +113,12 @@
         /* height: calc(100vh - 180px); */
         /* display: block; */
         /* margin-left: auto;
-    margin-right: auto; */
+        margin-right: auto; */
 
     }
 
     .size {
-        width: 70%;
+        width: 50%;
     }
 
     .center {
