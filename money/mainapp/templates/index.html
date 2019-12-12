@@ -5,28 +5,27 @@
 <div class="button-group pr-3">
     <div class="row">
         <!-- button group -->
-        <div class="col-lg-2 col-xl-2">
-            <div class="add mb-2">
-                <a href="{% url 'add_student' %}" class="btn btn-warning btn-md position-button" role="button"
+        <div class="btn-group mb-3">
+            <div class="add mr-1 ml-4">
+                <a href="{% url 'add_student' %}" class="btn btn-warning btn-md" role="button"
                     id="add">Add Student</a>
-
             </div>
-            <div class="student mb-2">
-                <a href="{% url 'display_student' %}" class="btn btn-primary btn-md position-button" role="button"
+            <div class="student mr-1">
+                <a href="{% url 'display_student' %}" class="btn btn-primary btn-md " role="button"
                     id="std">Student</a>
             </div>
             <div class="choose">
-                <a href="{% url 'upload_csv' %}" class="btn btn-success btn-md position-button" role="button"
+                <a href="{% url 'upload_csv' %}" class="btn btn-success btn-md " role="button"
                     id="choose">Choose csv</a>
             </div>
         </div>
         <!-- END button group -->
 
-        <div class="col-lg col-xl-6">
+        <div class="col-lg">
             <h4 class="mt-0">Viewing : {{ header }}</h4>
 
             <!-- table -->
-            <div class="col0-xl">
+            <div class="col-xl">
                 <table class="table table-bordered color size table-backgroundcolor">
                     <thead>
                         <tr class="bg-primary center">
@@ -118,7 +117,7 @@
     }
 
     .size {
-        width: 50%;
+        width: 500px;
     }
 
     .center {
