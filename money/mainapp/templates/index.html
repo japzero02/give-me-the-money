@@ -2,73 +2,145 @@
 
 {% block body %}
 
-<br>
-
-<div class="button-group">
-
-    <a href="{% url 'display_student' %}" class="btn btn-primary btn-md" role="button"> Student</a>
-    <a href="{% url 'add_student' %}" class="btn btn-warning btn-sm" role="button"> +</a>
-
-{#    <a href="{% url 'display_january' %}" class="btn btn-primary btn-md" role="button"> January</a>#}
-{#    <a href="#" class="btn btn-warning btn-sm" role="button"> +</a>#}
-
-
-
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 col-lg-2 offset-lg-1">
+            <h5 class="h4 text-center">Options</h5>
+            <div class="button-naja">
+                <a href="{% url 'add_student' %}" class="btn btn-block btn-warning">Add Student</a>
+                <a href="{% url 'display_student' %}" class="btn btn-block btn-primary">Display Student</a>
+                <a href="{% url 'upload_csv' %}" class="btn btn-block btn-success">Choose .csv to upload</a>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-8">
+            <h5 class="h4">Viewing: {{ header }}</h5>
+            <table class="table table-striped table-responsive">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Student ID</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">JAN</th>
+                        <th scope="col">FEB</th>
+                        <th scope="col">MAR</th>
+                        <th scope="col">APR</th>
+                        <th scope="col">MAY</th>
+                        <th scope="col">JUN</th>
+                        <th scope="col">JUL</th>
+                        <th scope="col">AUG</th>
+                        <th scope="col">SEP</th>
+                        <th scope="col">OCT</th>
+                        <th scope="col">NOV</th>
+                        <th scope="col">DEC</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Manage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <th scope="row">{{ item.student_id }}</th>
+                        <td>{{ item.first_name }} {{ item.last_name }}</td>
+                        <td>
+                            {% if item.january == "ยังไม่จ่าย" %}
+                            <i class="fas fa-2x fa-times-circle" style="color: red;"></i>
+                            {% else %}
+                            <i class="fas fa-2x fa-check-circle" style="color: green;"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if item.february == "ยังไม่จ่าย" %}
+                            <i class="fas fa-2x fa-times-circle" style="color: red;"></i>
+                            {% else %}
+                            <i class="fas fa-2x fa-check-circle" style="color: green;"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if item.march == "ยังไม่จ่าย" %}
+                            <i class="fas fa-2x fa-times-circle" style="color: red;"></i>
+                            {% else %}
+                            <i class="fas fa-2x fa-check-circle" style="color: green;"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if item.april == "ยังไม่จ่าย" %}
+                            <i class="fas fa-2x fa-times-circle" style="color: red;"></i>
+                            {% else %}
+                            <i class="fas fa-2x fa-check-circle" style="color: green;"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if item.may == "ยังไม่จ่าย" %}
+                            <i class="fas fa-2x fa-times-circle" style="color: red;"></i>
+                            {% else %}
+                            <i class="fas fa-2x fa-check-circle" style="color: green;"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if item.june == "ยังไม่จ่าย" %}
+                            <i class="fas fa-2x fa-times-circle" style="color: red;"></i>
+                            {% else %}
+                            <i class="fas fa-2x fa-check-circle" style="color: green;"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if item.july == "ยังไม่จ่าย" %}
+                            <i class="fas fa-2x fa-times-circle" style="color: red;"></i>
+                            {% else %}
+                            <i class="fas fa-2x fa-check-circle" style="color: green;"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if item.august == "ยังไม่จ่าย" %}
+                            <i class="fas fa-2x fa-times-circle" style="color: red;"></i>
+                            {% else %}
+                            <i class="fas fa-2x fa-check-circle" style="color: green;"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if item.september == "ยังไม่จ่าย" %}
+                            <i class="fas fa-2x fa-times-circle" style="color: red;"></i>
+                            {% else %}
+                            <i class="fas fa-2x fa-check-circle" style="color: green;"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if item.october == "ยังไม่จ่าย" %}
+                            <i class="fas fa-2x fa-times-circle" style="color: red;"></i>
+                            {% else %}
+                            <i class="fas fa-2x fa-check-circle" style="color: green;"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if item.november == "ยังไม่จ่าย" %}
+                            <i class="fas fa-2x fa-times-circle" style="color: red;"></i>
+                            {% else %}
+                            <i class="fas fa-2x fa-check-circle" style="color: green;"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if item.december == "ยังไม่จ่าย" %}
+                            <i class="fas fa-2x fa-times-circle" style="color: red;"></i>
+                            {% else %}
+                            <i class="fas fa-2x fa-check-circle" style="color: green;"></i>
+                            {% endif %}
+                        </td>
+                        <td>{{ item.issues }}</td>
+                        {% if header == "Student" %}
+                        <td>
+                            <a href="{% url 'edit_student' item.pk %}" class="btn btn-block btn-warning"
+                                id="edit">Edit</a>
+                            <a href="{% url 'delete_student' item.pk %}" class="btn btn-block btn-danger"
+                                id="del">Delete</a>
+                        </td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
-
-
-<br>
-
-<h4>Viewing : {{ header }}</h4>
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th>Student_ID</th>
-            <th>Full_Name</th>
-            <th>January</th>
-            <th>February</th>
-            <th>March</th>
-            <th>April</th>
-            <th>May</th>
-            <th>June</th>
-            <th>July</th>
-            <th>August</th>
-            <th>September</th>
-            <th>October</th>
-            <th>November</th>
-            <th>December</th>
-            <th>Issues</th>
-        </tr>
-    </thead>
-    <tbody>
-
-    {% for item in items %}
-    <tr>
-        <td>{{ item.student_id }}</td>
-        <td>{{ item.first_name }} {{ item.last_name }}</td>
-        <td>{{ item.january }}</td>
-        <td>{{ item.february }}</td>
-        <td>{{ item.march }}</td>
-        <td>{{ item.april }}</td>
-        <td>{{ item.may }}</td>
-        <td>{{ item.june }}</td>
-        <td>{{ item.july }}</td>
-        <td>{{ item.august }}</td>
-        <td>{{ item.september }}</td>
-        <td>{{ item.october }}</td>
-        <td>{{ item.november }}</td>
-        <td>{{ item.december }}</td>
-        <td>{{ item.issues }}</td>
-        {% if header == "Student" %}
-        <td>
-            <a href="{% url 'edit_student' item.pk %}" class="btn btn-warning btn-sm" role="button">Edit</a>
-        </td>
-        {% endif %}
-    </tr>
-
-    {% endfor %}
-
-    </tbody>
-</table>
-
+<!-- {#    <a href="{% url 'display_january' %}" class="btn btn-primary btn-md" role="button"> January</a>#}
+    {#    <a href="#" class="btn btn-warning btn-sm" role="button"> +</a>#} -->
+</div>
 {% endblock %}

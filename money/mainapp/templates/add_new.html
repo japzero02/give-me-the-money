@@ -1,19 +1,35 @@
 {% extends 'base.html' %}
 
 {% block body %}
-    <div class="container">
-        <form method="POST">
-            <br>
-            {% csrf_token %}
-            {% for field in form %}
-            <div class="form-group row">
-                <label for="id_{{ field.name }}" class="col-2 col-form-label"> {{ field.label }}</label>
-                <div class="col-10">
-                    {{ field }}
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-lg-4 offset-lg-4">
+                <div class="card card-box">
+                    <h5 class="card-header">Adding a student</h5>
+                    <div class="card-body">
+                        <form method="post">
+                            {% csrf_token %}
+                            {% for field in form %}
+                            <div class="form-group">
+                                <label for="id_{{ field.name }}">{{ field.label }}</label>
+                                {{ field }}
+                            </div>
+                            {% endfor %}
+                            <button type="submit" class="btn btn-block btn-primary" name="button"
+                                style="margin-bottom: 10px;">Add Student</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-            {% endfor %}
-            <button type="submit" class="btn-primary" name="button">Add Student</button>
-        </form>
+        </div>
     </div>
+    <style>
+        .card-box {
+            margin-top: 0.05rem;
+            margin-bottom: 1.75rem;
+            -webkit-box-shadow: 0px 0px 58px -24px rgba(0, 0, 0, 0.6);
+            -moz-box-shadow: 0px 0px 58px -24px rgba(0, 0, 0, 0.6);
+            box-shadow: 0px 0px 58px -24px rgba(0, 0, 0, 0.6);
+        }
+    </style>
 {% endblock %}
