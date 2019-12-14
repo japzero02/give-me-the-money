@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^edit_student/(?P<pk>\d+)$', edit_student, name='edit_student'),
     url(r'^delete_student/(?P<pk>\d+)$', delete_student, name='delete_student'),
     url(r'^upload_csv$', upload_csv, name='upload_csv'),
+    url(r'^filter_month$', filter_month, name='filter_month'),
 ]

@@ -10,11 +10,26 @@
                 <a href="{% url 'add_student' %}" class="btn btn-block btn-warning">Add Student</a>
                 <a href="{% url 'display_student' %}" class="btn btn-block btn-primary">Display Student</a>
                 <a href="{% url 'upload_csv' %}" class="btn btn-block btn-success">Choose .csv to upload</a>
-                <a href="/filter_month?month=january" class="btn btn-danger">Not Paid</a>
+                <a href="/filter_month?month=january" class="btn btn-block btn-danger">Not Paid</a>
             </div>
         </div>
         <div class="col-md-12 col-lg-8">
-            <h5 class="h4">Viewing: {{ header }}</h5>
+            <h5 class="h4">Viewing: {{ header }} Not Paid</h5>
+            <select class="form-control form-control-lg" style="margin-bottom: 10px;" id="list" onChange="onChangeData(this);">
+                <option value="none">Select month...</option>
+                <option value="jan">JANUARY</option>
+                <option value="feb">FEBRUARY</option>
+                <option value="mar">MARCH</option>
+                <option value="apl">APRIL</option>
+                <option value="may">MAY</option>
+                <option value="jun">JUNE</option>
+                <option value="jul">JULY</option>
+                <option value="aug">AUGUST</option>
+                <option value="sep">SEPTEMBER</option>
+                <option value="oct">OCTOBER</option>
+                <option value="nov">NOVEMBER</option>
+                <option value="dec">DECEMBER</option>
+            </select>
             <table class="table table-striped table-responsive">
                 <thead class="thead-dark">
                     <tr>
@@ -142,4 +157,11 @@
     </div>
 </div>
 </div>
+
+    <script>
+        function onChangeData(e) {
+            console.log(e.value)
+            window.location.href = "/filter_month?month="+e.value
+        }
+    </script>
 {% endblock %}

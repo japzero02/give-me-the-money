@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dba1cf33-de73-4e07-97b3-7dde2b788d25" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/give-me-the-money.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainapp/templates/upload_csv.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainapp/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainapp/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainapp/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/urls.py" afterDir="false" />
@@ -81,6 +73,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="money.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -125,6 +118,8 @@
       <workItem from="1575730218353" duration="4262000" />
       <workItem from="1575960603166" duration="1676000" />
       <workItem from="1575965627773" duration="2875000" />
+      <workItem from="1576305030081" duration="1554000" />
+      <workItem from="1576317488830" duration="15833000" />
     </task>
     <servers />
   </component>

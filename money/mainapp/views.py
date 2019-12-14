@@ -59,7 +59,6 @@ def delete_student(request, pk):
 def upload_csv(request):
     """this function can add student by csv file"""
     template = "upload_csv.html"
-    data = Student.objects.all()
     if request.method == "GET":
         return render(request, template)
     csv_file = request.FILES['file']
@@ -73,5 +72,39 @@ def upload_csv(request):
             first_name=column[1],
             last_name=column[2]
         )
-    context = {}
     return redirect('/display_student')
+
+
+def filter_month(request):
+    month = request.GET['month']
+    if month == "jan":
+        items = Student.objects.all().order_by('student_id').filter(january='ยังไม่จ่าย')
+    elif month == "feb":
+        items = Student.objects.all().order_by('student_id').filter(february='ยังไม่จ่าย')
+    elif month == "mar":
+        items = Student.objects.all().order_by('student_id').filter(march='ยังไม่จ่าย')
+    elif month == "apl":
+        items = Student.objects.all().order_by('student_id').filter(april='ยังไม่จ่าย')
+    elif month == "may":
+        items = Student.objects.all().order_by('student_id').filter(may='ยังไม่จ่าย')
+    elif month == "jun":
+        items = Student.objects.all().order_by('student_id').filter(june='ยังไม่จ่าย')
+    elif month == "jul":
+        items = Student.objects.all().order_by('student_id').filter(july='ยังไม่จ่าย')
+    elif month == "aug":
+        items = Student.objects.all().order_by('student_id').filter(august='ยังไม่จ่าย')
+    elif month == "sep":
+        items = Student.objects.all().order_by('student_id').filter(september='ยังไม่จ่าย')
+    elif month == "oct":
+        items = Student.objects.all().order_by('student_id').filter(october='ยังไม่จ่าย')
+    elif month == "nov":
+        items = Student.objects.all().order_by('student_id').filter(november='ยังไม่จ่าย')
+    elif month == "dec":
+        items = Student.objects.all().order_by('student_id').filter(december='ยังไม่จ่าย')
+    else:
+        items = Student.objects.all().order_by('student_id').filter(january='None')
+    context = {
+        'items': items,
+        'header': 'Student',
+    }
+    return render(request, 'filter_page.html', context)
