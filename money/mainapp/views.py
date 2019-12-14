@@ -76,6 +76,7 @@ def upload_csv(request):
 
 
 def filter_month(request):
+    """This function use to select month for fillter whos not paid in that month"""
     month = request.GET['month']
     if month == "jan":
         items = Student.objects.all().order_by('student_id').filter(january='ยังไม่จ่าย')
