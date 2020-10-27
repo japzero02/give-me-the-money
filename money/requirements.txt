@@ -44,7 +44,7 @@ conda-verify==3.4.2
 contextlib2==0.5.5
 coverage==4.5.4
 crayons==0.3.0
-cryptography==2.6.1
+cryptography==3.2
 cx-Oracle==7.2.1
 cycler==0.10.0
 Cython==0.29.6
