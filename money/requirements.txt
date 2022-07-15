@@ -34,7 +34,7 @@ Click==7.0
 cloudpickle==0.8.0
 cloudstorage==0.9.0
 clyent==1.2.2
-codecov==2.0.15
+codecov==2.0.16
 colorama==0.4.1
 comtypes==1.1.7
 conda==4.7.9
