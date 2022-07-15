@@ -53,7 +53,7 @@ dask==1.1.4
 decorator==4.4.0
 defusedxml==0.5.0
 diff-match-patch==20181111
-distributed==1.26.0
+distributed==2021.10.0
 Django==2.2.8
 django-excel==0.0.10
 django-import-export==1.2.0
