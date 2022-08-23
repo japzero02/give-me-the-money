@@ -139,7 +139,7 @@ multipledispatch==0.6.0
 mysql-connector==2.2.9
 mysql-connector-python==8.0.17
 navigator-updater==0.2.1
-nbconvert==5.4.1
+nbconvert==6.5.1
 nbformat==4.4.0
 networkx==2.2
 nltk==3.4.5
